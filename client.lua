@@ -1,5 +1,5 @@
 ESX = nil
-TriggerEvent('esx:getMesterSharedMesterObject', function(obj) ESX = obj end)
+TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
 local vankulcs = false
 RegisterNetEvent('mestervankulcs')
