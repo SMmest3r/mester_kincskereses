@@ -46,7 +46,6 @@ AddEventHandler('mesterkulcsell', function()
 	
 	if oneQuantity > 0 then
 		TriggerClientEvent('mestervankulcs', source) -- igaz
-        xPlayer.removeInventoryItem(Config.kulcsitem, 1)
 	else
 		TriggerClientEvent('mesternincskulcs', source) -- hamis
 	end
