@@ -10,11 +10,7 @@ end)
 
 RegisterNetEvent('mesternincskulcs')
 AddEventHandler('mesternincskulcs', function()
-  if Config.kellkulcs == false then
-	vankulcs = true
-  elseif Config.kellkulcs == true then
-    local vankulcs = false
-  end
+    vankulcs = false
 end)
 
 Citizen.CreateThread(function()
@@ -31,6 +27,7 @@ Citizen.CreateThread(function()
       TriggerServerEvent('mesterkulcsell')
       Citizen.Wait(100)
       if vankulcs == false then
+        if Config.kellkulcs == true then
         ESX.ShowNotification(Config.nincskulcs, true, true, false)
       else
      local gyemantvagypenz = math.random(1, Config.nyeremenyesely)
@@ -55,6 +52,7 @@ Citizen.CreateThread(function()
    Citizen.Wait(50)
    ESX.ShowNotification(Config.penz, true, true, false)
 Citizen.Wait(Config.varakozas)
+end
 end
 end   
 end
