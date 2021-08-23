@@ -5,11 +5,16 @@ local vankulcs = false
 RegisterNetEvent('mestervankulcs')
 AddEventHandler('mestervankulcs', function()
 	vankulcs = true
+  TriggerServerEvent('mesterkulcselvetel')
 end)
 
 RegisterNetEvent('mesternincskulcs')
 AddEventHandler('mesternincskulcs', function()
-	vankulcs = false
+  if Config.kellkulcs == false then
+	vankulcs = true
+  elseif Config.kellkulcs == true then
+    local vankulcs = false
+  end
 end)
 
 Citizen.CreateThread(function()
