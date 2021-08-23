@@ -51,3 +51,12 @@ AddEventHandler('mesterkulcsell', function()
 		TriggerClientEvent('mesternincskulcs', source) -- hamis
 	end
 end)
+
+RegisterServerEvent('mesterkulcselvetel')
+AddEventHandler('mesterkulcselvetel', function()
+	local _source = source
+	local xPlayer = ESX.GetPlayerFromId(_source)
+    if Config.kellkulcs == true then
+    xPlayer.removeInventoryItem(Config.kulcsitem, 1)
+    end
+end)
