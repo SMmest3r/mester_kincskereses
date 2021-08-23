@@ -57,6 +57,8 @@ Config.nyeremenytargyszam = 25
 Config.nyeremenyesely = 15 --Minimum 3
 --A kulcs item neve ami kell a láda kinyitásához
 Config.kulcsitem = "kulcs"
+--Ha false akkor nnyithatóak a kincses ládák kulcs nélkül is!
+Config.kellkulcs = true
 --Mennyit kell várni, hogy a játékos megint kinyithasson egy ládát (in ms)
 Config.varakozas = 100000
 --Milyen távol legyen a játékos a ládától, hogy megjelenjen a felirat és kinyithassa a ládát. (kordinátákban)
