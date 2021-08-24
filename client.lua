@@ -27,7 +27,7 @@ Citizen.CreateThread(function()
       TriggerServerEvent('mesterkulcsell')
       Citizen.Wait(100)
       if vankulcs == false then
-        if Config.kellkulcs == true then
+        if Config.kellkulcs == false then
         ESX.ShowNotification(Config.nincskulcs, true, true, false)
       else
      local gyemantvagypenz = math.random(1, Config.nyeremenyesely)
