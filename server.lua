@@ -38,17 +38,15 @@ AddEventHandler('mesterkincstargy', function()
     xPlayer.addInventoryItem(Config.nyeremenytargy, Config.nyeremenytargyszam)
     end)
 
-    RegisterServerEvent('mesterkulcsell')
+RegisterServerEvent('mesterkulcsell')
 AddEventHandler('mesterkulcsell', function()
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
-	local oneQuantity = xPlayer.getInventoryItem(Config.kulcsitem).count
-	
-	if oneQuantity > 0 then
-		TriggerClientEvent('mestervankulcs', source) -- igaz
-	else
-		TriggerClientEvent('mesternincskulcs', source) -- hamis
-	end
+    if Config.kellkulcs == false then
+    TriggerClientEvent('mestervankulcs', source) -- igaz
+	elseif Config.kellkulcs == true then
+    TriggerClientEvent('mesterkulcsell3', source)
+end
 end)
 
 RegisterServerEvent('mesterkulcselvetel')
@@ -58,4 +56,17 @@ AddEventHandler('mesterkulcselvetel', function()
     if Config.kellkulcs == true then
     xPlayer.removeInventoryItem(Config.kulcsitem, 1)
     end
+end)
+
+RegisterServerEvent('mesterkulcsell2')
+AddEventHandler('mesterkulcsell2', function()
+	local _source = source
+	local xPlayer = ESX.GetPlayerFromId(_source)
+	local oneQuantity = xPlayer.getInventoryItem(Config.kulcsitem).count
+	print('eddig jó kéne legyen')
+	if oneQuantity > 0 then
+		TriggerClientEvent('mestervankulcs', source) -- igaz
+	else
+		TriggerClientEvent('mesternincskulcs', source) -- hamis
+	end
 end)
