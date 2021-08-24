@@ -11,7 +11,7 @@ end)
 RegisterNetEvent('mesternincskulcs')
 AddEventHandler('mesternincskulcs', function()
     vankulcs = false
-end)
+    end)
 
 Citizen.CreateThread(function()
 
@@ -25,9 +25,8 @@ Citizen.CreateThread(function()
     DrawText3Ds(locations.x, locations.y, locations.z, Config.szoveg) 
     if IsControlJustReleased(0,38) then
       TriggerServerEvent('mesterkulcsell')
-      Citizen.Wait(100)
+      Citizen.Wait(500)
       if vankulcs == false then
-        if Config.kellkulcs == false then
         ESX.ShowNotification(Config.nincskulcs, true, true, false)
       else
      local gyemantvagypenz = math.random(1, Config.nyeremenyesely)
@@ -53,7 +52,6 @@ Citizen.CreateThread(function()
    ESX.ShowNotification(Config.penz, true, true, false)
 Citizen.Wait(Config.varakozas)
 end
-end
 end   
 end
 end
@@ -77,6 +75,11 @@ local playerPed = GetPlayerPed(-1)
  Citizen.Wait(1000)
  ClearPedTasksImmediately(playerPed)
  ClearPedTasks(playerPed)
+end)
+
+RegisterNetEvent('mesterkulcsell3')
+AddEventHandler('mesterkulcsell3', function()
+  TriggerServerEvent('mesterkulcsell2', source)
 end)
 
 
